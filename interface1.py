@@ -1,52 +1,15 @@
+print('''
+    ===================================================================================================================================================================================
+    ---------------------------------SALMA'S CLI COMMANDS-----------------------------------------------------       
+    ===================================================================================================================================================================================
 
-from colorama import Fore, Style, init
-
-init(autoreset=True)
-
-# Color constants
-COLORS = {
-    "red": Fore.RED,
-    "green": Fore.GREEN,
-    "yellow": Fore.YELLOW,
-    "blue": Fore.BLUE,
-    "cyan": Fore.CYAN,
-    "magenta": Fore.MAGENTA,
-    "white": Fore.WHITE,
-    "reset": Style.RESET_ALL
-}
-
-def cprint(text, color="white"):
-    """Custom print function with color."""
-    clr = COLORS.get(color.lower(), COLORS["white"])
-    print(f"{clr}{text}{COLORS['reset']}")
-
-def title(text):
-    cprint("\n" + "=" * len(text), "cyan")
-    cprint(text, "cyan")
-    cprint("=" * len(text) + "\n", "cyan")
-
-def info(text):
-    cprint(text, "blue")
-
-def success(text):
-    cprint(text, "green")
-
-def error(text):
-    cprint(text, "red")
-
-
-def show_menu():
-    print('''
-    ===============================WELCOME TO SALMA'S CLI========================================================================
-    
     N.B. '<>' is used to represent the input space for your target file path when combining with
     the given command(s)          
-        
 
     ---------------------------------AVAILABLE COMMANDS--------------------------------------------------
 
       
-    peek <target file> <number of lines>                -      Preview the first n lines of a file
+    peek <target file>                                  -      Preview the first n lines of a file
     find <target word> in <target file>                 -      Find files matching a pattern
     swap <target file 1> with <target file 2>           -      Swap contents of two files
     fmeta <target file>                                 -      Show metadata for a file
@@ -58,5 +21,8 @@ def show_menu():
     cfolder <name>                                      -      Create a new folder
     cusername <name>                                    -      Change Username 
     exit                                                -      Quit the CLI tool                         
-    ''')
-    print()
+''')
+   
+
+    
+   

@@ -6,6 +6,7 @@ from interface import cprint,title, success, error,info
 # this is where the main application will run
 def main():
     user = get_username()
+    show_menu
     while True:
         user_input = input(f"{user}@CLI-T>>> ").strip()
         if user_input == "":

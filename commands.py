@@ -17,9 +17,9 @@ commands = {
 def execute_func(user_input):
     parts = user_input.split()
     cmd = parts[0]
-    args = parts[1:]
+    params = parts[1:]
 
     if cmd in commands:
-        commands[cmd](args)
+        commands[cmd](params)
     else:
         error(f"Unknown command: {cmd}")
