@@ -35,8 +35,6 @@ def error(text):
     cprint(text, "red")
 
 
-from interface import cprint
-
 def show_menu():
     cprint("\n=====================================", "cyan")
     cprint("           OH-MY-CLI — Commands      ", "cyan")
@@ -44,7 +42,6 @@ def show_menu():
 
     cprint("Available Commands:\n", "yellow")
 
-    # Fake table look
     table = [
         ("peek <file>",              "Preview the first n lines of a file"),
         ("find_x_in <pattern>",      "Find files matching a pattern"),

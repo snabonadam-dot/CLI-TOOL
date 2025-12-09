@@ -2,7 +2,7 @@ from interface import show_menu
 from functions import clean,get_username
 from commands import execute_func
 import os
-from interface import cprint,title, success, error
+from interface import cprint,title, success, error,info
 # this is where the main application will run
 def main():
     user = get_username()
@@ -15,7 +15,7 @@ def main():
         elif user_input == "help":
             show_menu()
         elif user_input == "exit":
-            success("Exiting filecli...")
+            info("Exiting filecli...")
             break
         else:
             execute_func(user_input)

@@ -1,6 +1,6 @@
 import os
 import time
-from interface import success,error,title
+from interface import success,error,title,info
 # please write your functions here
 
 
@@ -21,12 +21,12 @@ def get_username():
 
 def change_username(params):
     if len(params) < 1:
-        success("Usage: username <username>")
+        info("Usage: username <username>")
         return
     username = params[0]
     with open("user.txt","w",encoding="utf-8") as f:
         f.write(username)
-        success("username change, exit and restart application")
+        success("username changed, exit and restart application")
 
 def action_prompt():
     confirm = input("ARE YOU SURE YOU WANT TO COMPLETE THIS ACTION Y/N?: ")
@@ -52,7 +52,7 @@ def delete_folder_recursive(folder):
 ## peek function, allows you to look at the first n lines in a file, prints the first n lines in the console
 def peek(params):
     if len(params) < 2:
-        success("Usage: peek <filename> <number_of_lines>")
+        info("Usage: peek <filename> <number_of_lines>")
         return
     filename = params[0]
     number_of_lines = int(params[1])
@@ -68,7 +68,7 @@ def peek(params):
 # find a certain string in a text file, returns if the word can be found and the line it is in
 def find_x_in(params):
     if len(params) < 2:
-        success("Usage: find_x_in <filename> <word to find>")
+        info("Usage: find_x_in <filename> <word to find>")
         return
     filename = params[0]
     word_to_find = params[1].strip('"')
@@ -87,7 +87,7 @@ def find_x_in(params):
 # swap the contents of two files
 def swap_contents(params):
     if len(params) < 2:
-        success("Usage: swap <file1> <file2>")
+        info("Usage: swap <file1> <file2>")
         return
     file1 = params[0].strip('"')
     file2 = params[1].strip('"')
@@ -110,7 +110,7 @@ def swap_contents(params):
 # this gives us all the metadata information about a file in the current directory
 def fmeta(params):
     if len(params) < 1:
-        success("Usage: fmeta <filename>")
+        info("Usage: fmeta <filename>")
         return
     filename = params[0].strip('"')
     if file_exists(filename):
@@ -130,7 +130,7 @@ def fmeta(params):
 # jump is our way of doing change directory
 def jump(params):
     if len(params) < 1:
-        success("Usage: jump <path>")
+        info("Usage: jump <path>")
         return
     path = params[0]
 
@@ -149,7 +149,7 @@ def exit():
 # permanently delete file
 def pdelete(params):
     if len(params) < 2:
-        success("Usage: pdelete -f <file> | pdelete -d <folder>")
+        info("Usage: pdelete -f <file> | pdelete -d <folder>")
         return
     
     flag = params[0]
@@ -182,7 +182,7 @@ def clean():
 
 def create_folder(params):
     if len(params) < 1:
-        success("Usage: create_folder <foldername>")
+        info("Usage: create_folder <foldername>")
         return
 
     folder = params[0]
@@ -197,7 +197,7 @@ def create_folder(params):
 
 def create_file(params):
     if len(params) < 1:
-        success("Usage: create_file <filename>")
+        info("Usage: create_file <filename>")
         return
 
     filename = params[0]
