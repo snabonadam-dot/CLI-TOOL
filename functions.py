@@ -1,24 +1,41 @@
 import os
 import time
 from interface import success,error,title,info
-# please write your functions here
 
 
-# helper functions
-# this helps us check if the file exists beforehand, so we don't run into reading or writing errors after
+# Helper Functions
+
+# this helps us check if the file exists beforehand
 def file_exists(path):
     return os.path.isfile(path)
 
+
+
+# this helps us check if the folder exists beforehand
 def folder_exists(path):
     return os.path.isdir(path)
 
+# simple utility to know our current folder we are in
 def gwd(params):
     success(os.getcwd())
+
+# get all files in the current folder
+def get_files():
+    return os.listdir(os.getcwd())
+
+# a simple helper function to read file contents into a string for search
+def read_files_into_str(filename):
+    with open(filename,'r',encoding="utf-8") as f:
+        contents = f.read()
+    return contents
+
+# personalization of username in cli tool
 def get_username():
     with open("user.txt","r",encoding="utf-8") as f:
         username = f.readline()
         return username
 
+# change username in cli
 def change_username(params):
     if len(params) < 1:
         info("Usage: username <username>")
@@ -28,6 +45,7 @@ def change_username(params):
         f.write(username)
         success("username changed, exit and restart application")
 
+# a simple helper to confirm actions
 def action_prompt():
     confirm = input("ARE YOU SURE YOU WANT TO COMPLETE THIS ACTION Y/N?: ")
     if confirm.lower() == "y":
@@ -35,6 +53,7 @@ def action_prompt():
     else:
         return False
 
+# using recursion to delete folder and files in it
 def delete_folder_recursive(folder):
     for item in os.listdir(folder):
         path = os.path.join(folder, item)
@@ -48,8 +67,10 @@ def delete_folder_recursive(folder):
     os.rmdir(folder)
 
 
-# command functions
-## peek function, allows you to look at the first n lines in a file, prints the first n lines in the console
+# Command functions for cli tool
+
+
+## pour eek function, allows you to look at the first n lines in a file, prints the first n lines in the console
 def peek(params):
     if len(params) < 2:
         info("Usage: peek <filename> <number_of_lines>")
@@ -140,7 +161,6 @@ def jump(params):
         success(f"Changed directory to: {os.getcwd()}")
     else:
         error("Folder does not exist!")
-        
 
 # close our wonderful program
 def exit():
@@ -211,3 +231,56 @@ def create_file(params):
         pass
         success(f"File created: {filename}")
 
+# search file by name
+def search_filename(params):
+    if len(params) < 1:
+        info("Usage: search_f <filename>")
+        return
+    
+    filename = params[0]
+    files = get_files()
+
+    if filename in files:
+        success(f'"{filename}" was found in this directory')
+    else:
+        error("not available")  
+    return
+
+def search_extension(params):
+    if len(params) < 1:
+        info("Usage: search_x <extension>")
+        return
+    
+    extension = params[0]
+    files = get_files()
+    found_files = []
+    for file in files:
+        if file.endswith(extension):
+            found_files.append(file)
+        
+    if len(found_files) == 0:
+        error("not available")  
+    else:
+        success(f'"{found_files}" was found in this directory')
+    return
+
+# search by content
+def search_content(params):
+    if len(params) < 1:
+        info("Usage: search_c <text>")
+        return
+    
+    text = params[0]
+    files = get_files()
+    found_files = []
+    for file in files:
+        if file_exists(file):
+            file_contents = read_files_into_str(file)
+            if text in file_contents:
+                found_files.append(file)
+        
+    if len(found_files) == 0:
+        error("this word cannot be found in any file in this directory")  
+    else:
+        success(f'These files {found_files} contain the search term "{text}"')
+    return
