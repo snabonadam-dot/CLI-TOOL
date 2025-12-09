@@ -35,28 +35,39 @@ def error(text):
     cprint(text, "red")
 
 
+name = """
+ _____  _     _____   _____ _____  _____ _     
+/  __ \| |   |_   _| |_   _|  _  ||  _  | |    
+| /  \/| |     | |     | | | | | || | | | |    
+| |    | |     | |     | | | | | || | | | |    
+| \__/\| |_____| |_    | | \ \_/ /\ \_/ / |____
+ \____/\_____/\___/    \_/  \___/  \___/\_____/
+                                               
+                                               
+"""
 def show_menu():
-    print('''
-    ===============================WELCOME TO SALMA'S CLI========================================================================
-    
-    N.B. '<>' is used to represent the input space for your target file path when combining with
-    the given command(s)          
-        
+    cprint("\n=====================================", "cyan")
+    cprint("           OH-MY-CLI — Commands      ", "cyan")
+    cprint("=====================================\n", "cyan")
 
-    ---------------------------------AVAILABLE COMMANDS--------------------------------------------------
+    cprint("Available Commands:\n", "yellow")
 
-      
-    peek <target file> <number of lines>                -      Preview the first n lines of a file
-    find <target word> in <target file>                 -      Find files matching a pattern
-    swap <target file 1> with <target file 2>           -      Swap contents of two files
-    fmeta <target file>                                 -      Show metadata for a file
-    jump <target folder>                                -      Change working directory    
-    getwd <target folder>                               -      Show current working directory
-    pdelete -f <target file>                            -      Permanently delete file
-    pdelete -d <target folder>                          -      Permanently delete folder 
-    cfile <name>                                        -      Create a new empty file   
-    cfolder <name>                                      -      Create a new folder
-    cusername <name>                                    -      Change Username 
-    exit                                                -      Quit the CLI tool                         
-    ''')
+    table = [
+        ("peek <file>",              "Preview the first n lines of a file"),
+        ("find_x_in <pattern>",      "Find files matching a pattern"),
+        ("swap <f1> <f2>",           "Swap contents of two files"),
+        ("fmeta <file>",             "Show metadata for a file"),
+        ("jump <path>",              "Change working directory"),
+        ("gwd",                      "Show current working directory"),
+        ("pdelete -f/-d <target>",   "Permanently delete file or folder"),
+        ("create_folder <name>",     "Create a new folder"),
+        ("create_file <name>",       "Create a new empty file"),
+        ("username <name>",          "Change Username"),
+        ("exit",                     "Quit the CLI tool")
+    ]
+
+    # Render the table rows
+    for cmd, desc in table:
+        cprint(f"  {cmd:<25} - {desc}", "white")
+
     print()

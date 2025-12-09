@@ -11,7 +11,10 @@ commands = {
     "pdelete": pdelete,
     "create_folder":create_folder,
     "create_file": create_file,
-    "username": change_username
+    "username": change_username,
+    "search_f": search_filename,
+    "search_x": search_extension,
+    "search_c": search_content,
 }
 
 def execute_func(user_input):
