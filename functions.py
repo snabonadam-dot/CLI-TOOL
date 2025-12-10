@@ -3,12 +3,11 @@ import time
 from interface import success,error,title,info
 
 
-# Helper Functions
+# Helper Functions - Caleb
 
 # this helps us check if the file exists beforehand
 def file_exists(path):
     return os.path.isfile(path)
-
 
 
 # this helps us check if the folder exists beforehand
@@ -67,7 +66,7 @@ def delete_folder_recursive(folder):
     os.rmdir(folder)
 
 
-# Command functions for cli tool
+# Command functions for cli tool - Hakim
 
 
 ## pour eek function, allows you to look at the first n lines in a file, prints the first n lines in the console
@@ -231,6 +230,8 @@ def create_file(params):
         pass
         success(f"File created: {filename}")
 
+# search functions - Salma
+
 # search file by name
 def search_filename(params):
     if len(params) < 1:
@@ -243,9 +244,10 @@ def search_filename(params):
     if filename in files:
         success(f'"{filename}" was found in this directory')
     else:
-        error("not available")  
+        error("file not available in this directory")  
     return
 
+# search by extension
 def search_extension(params):
     if len(params) < 1:
         info("Usage: search_x <extension>")
@@ -254,6 +256,7 @@ def search_extension(params):
     extension = params[0]
     files = get_files()
     found_files = []
+    
     for file in files:
         if file.endswith(extension):
             found_files.append(file)
