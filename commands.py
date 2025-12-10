@@ -1,4 +1,4 @@
-# import all the little functions from functions module
+# import all the custom functions from functions module
 from functions import *
 from interface import error
 commands = {

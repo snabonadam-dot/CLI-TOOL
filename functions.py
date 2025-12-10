@@ -1,15 +1,22 @@
 import os
 import time
-from interface import success,error,title,info
+from interface import success,error,info
 
 
+<<<<<<< HEAD
 # Helper Functions - Caleb
 
+=======
+# Helper Functions
+>>>>>>> 23ff0354da3f35011c9778c776ec83072a40b9bc
 # this helps us check if the file exists beforehand
 def file_exists(path):
     return os.path.isfile(path)
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 23ff0354da3f35011c9778c776ec83072a40b9bc
 # this helps us check if the folder exists beforehand
 def folder_exists(path):
     return os.path.isdir(path)
@@ -82,6 +89,7 @@ def peek(params):
             lines = f.readlines()
             for line in lines[:number_of_lines]:
                 print(line, end="")
+                success()
     else:
         error("This file does not exist!")
 

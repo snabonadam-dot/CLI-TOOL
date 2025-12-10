@@ -1,44 +1,47 @@
 
 from colorama import Fore, Style, init
 
+# initialize colorama
 init(autoreset=True)
 
 # Color constants
 COLORS = {
     "red": Fore.RED,
     "green": Fore.GREEN,
-    "yellow": Fore.YELLOW,
     "blue": Fore.BLUE,
+    "yellow": Fore.YELLOW,
     "cyan": Fore.CYAN,
     "magenta": Fore.MAGENTA,
     "white": Fore.WHITE,
     "reset": Style.RESET_ALL
 }
 
-def cprint(text, color="white"):
-    """Custom print function with color."""
-    clr = COLORS.get(color.lower(), COLORS["white"])
-    print(f"{clr}{text}{COLORS['reset']}")
+# custom print with color parameter
+def cprint(text, color):
+    text_color = COLORS.get(color.lower())
+    print(f"{text_color}{text}")
 
-def title(text):
-    cprint("\n" + "=" * len(text), "cyan")
-    cprint(text, "cyan")
-    cprint("=" * len(text) + "\n", "cyan")
-
+# for information
 def info(text):
     cprint(text, "blue")
 
+# for success messages
 def success(text):
     cprint(text, "green")
 
+<<<<<<< HEAD
 def stylish(text):
     cprint(text, "magenta")
 
+=======
+# for error messages
+>>>>>>> 23ff0354da3f35011c9778c776ec83072a40b9bc
 def error(text):
     cprint(text, "red")
 
 
 name = """
+<<<<<<< HEAD
  ░▒▓███████▓▒░░▒▓██████▓▒░░▒▓█▓▒░      ░▒▓██████████████▓▒░ ░▒▓██████▓▒░        ░▒▓██████▓▒░░▒▓█▓▒░      ░▒▓█▓▒░      ░▒▓███████▓▒░░▒▓█▓▒░░▒▓█▓▒░ 
 ░▒▓█▓▒░      ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░      ░▒▓█▓▒░░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░      ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░      ░▒▓█▓▒░      ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░ 
 ░▒▓█▓▒░      ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░      ░▒▓█▓▒░░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░      ░▒▓█▓▒░      ░▒▓█▓▒░      ░▒▓█▓▒░      ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░ 
@@ -49,11 +52,26 @@ name = """
                                                                                                                                                   
                                                                                                                                                                                                                                                                                                                                                                                 
  """
+=======
+ ░▒▓██████▓▒░░▒▓█▓▒░      ░▒▓█▓▒░      ░▒▓████████▓▒░▒▓██████▓▒░ ░▒▓██████▓▒░░▒▓█▓▒░        
+░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░      ░▒▓█▓▒░         ░▒▓█▓▒░  ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░        
+░▒▓█▓▒░      ░▒▓█▓▒░      ░▒▓█▓▒░         ░▒▓█▓▒░  ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░        
+░▒▓█▓▒░      ░▒▓█▓▒░      ░▒▓█▓▒░         ░▒▓█▓▒░  ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░        
+░▒▓█▓▒░      ░▒▓█▓▒░      ░▒▓█▓▒░         ░▒▓█▓▒░  ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░        
+░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░      ░▒▓█▓▒░         ░▒▓█▓▒░  ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░        
+ ░▒▓██████▓▒░░▒▓████████▓▒░▒▓█▓▒░         ░▒▓█▓▒░   ░▒▓██████▓▒░ ░▒▓██████▓▒░░▒▓████████▓▒░ 
+                                                                                                                                  
+                                               
+"""
+>>>>>>> 23ff0354da3f35011c9778c776ec83072a40b9bc
 def show_menu():
     cprint("\n=====================================", "cyan")
     cprint("           OH-MY-CLI — Commands      ", "cyan")
     cprint("=====================================\n", "cyan")
+<<<<<<< HEAD
     stylish(name)
+=======
+>>>>>>> 23ff0354da3f35011c9778c776ec83072a40b9bc
 
     cprint("Available Commands:\n", "yellow")
 

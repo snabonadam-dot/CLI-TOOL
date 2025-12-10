@@ -2,10 +2,11 @@ from interface import show_menu
 from functions import clean,get_username,get_files
 from commands import execute_func
 import os
-from interface import cprint,title, success, error,info
+from interface import cprint, success, error,info
 # this is where the main application will run
 def main():
     user = get_username()
+    show_menu
     while True:
         user_input = input(f"{user}@CLI-T>>> ").strip()
         if user_input == "":
