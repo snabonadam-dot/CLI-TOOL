@@ -64,7 +64,7 @@ def peek(params):
             lines = f.readlines()
             for line in lines[:number_of_lines]:
                 print(line, end="")
-                success()
+                print()
     else:
         error("This file does not exist!")
 
@@ -118,10 +118,10 @@ def fmeta(params):
     filename = params[0].strip('"')
     if file_exists(filename):
         stats = os.stat(filename)
-        success("File:", filename)
-        success("Size:", stats.st_size, "bytes")
-        success("Extension:", os.path.splitext(filename)[1])
-        success("Absolute Path:", os.path.abspath(filename))
+        print("File:", filename)
+        print("Size:", stats.st_size, "bytes")
+        print("Extension:", os.path.splitext(filename)[1])
+        print("Absolute Path:", os.path.abspath(filename))
     else:
         error("File does not exist!")
 
