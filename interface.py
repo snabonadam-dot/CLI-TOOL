@@ -49,7 +49,6 @@ def show_menu():
     cprint("\n=====================================", "cyan")
     cprint("           OH-MY-CLI — Commands      ", "cyan")
     cprint("=====================================\n", "cyan")
-    success(name)
 
     cprint("Available Commands:\n", "yellow")
 
