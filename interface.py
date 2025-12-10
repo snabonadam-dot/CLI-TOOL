@@ -33,45 +33,52 @@ def purple(text):
 def success(text):
     cprint(text, "green")
 
+<<<<<<< HEAD
+def stylish(text):
+    cprint(text, "magenta")
+
+=======
 # for error messages
+>>>>>>> 23ff0354da3f35011c9778c776ec83072a40b9bc
 def error(text):
     cprint(text, "red")
 
 
 name = """
-
- ░▒▓███████▓▒░░▒▓██████▓▒░░▒▓█▓▒░      ░▒▓██████████████▓▒░ ░▒▓██████▓▒░        ░▒▓██████▓▒░░▒▓█▓▒░      ░▒▓█▓▒░      ░▒▓███████▓▒░░▒▓█▓▒░░▒▓█▓▒░ 
-░▒▓█▓▒░      ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░      ░▒▓█▓▒░░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░      ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░      ░▒▓█▓▒░      ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░ 
-░▒▓█▓▒░      ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░      ░▒▓█▓▒░░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░      ░▒▓█▓▒░      ░▒▓█▓▒░      ░▒▓█▓▒░      ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░ 
- ░▒▓██████▓▒░░▒▓████████▓▒░▒▓█▓▒░      ░▒▓█▓▒░░▒▓█▓▒░░▒▓█▓▒░▒▓████████▓▒░      ░▒▓█▓▒░      ░▒▓█▓▒░      ░▒▓█▓▒░      ░▒▓███████▓▒░ ░▒▓██████▓▒░  
-       ░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░      ░▒▓█▓▒░░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░      ░▒▓█▓▒░      ░▒▓█▓▒░      ░▒▓█▓▒░      ░▒▓█▓▒░         ░▒▓█▓▒░     
-       ░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░      ░▒▓█▓▒░░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░      ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░      ░▒▓█▓▒░▒▓██▓▒░▒▓█▓▒░         ░▒▓█▓▒░     
-░▒▓███████▓▒░░▒▓█▓▒░░▒▓█▓▒░▒▓████████▓▒░▒▓█▓▒░░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░       ░▒▓██████▓▒░░▒▓████████▓▒░▒▓█▓▒░▒▓██▓▒░▒▓█▓▒░         ░▒▓█▓▒░                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
-
+ ░▒▓██████▓▒░░▒▓█▓▒░      ░▒▓█▓▒░      ░▒▓████████▓▒░▒▓██████▓▒░ ░▒▓██████▓▒░░▒▓█▓▒░        
+░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░      ░▒▓█▓▒░         ░▒▓█▓▒░  ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░        
+░▒▓█▓▒░      ░▒▓█▓▒░      ░▒▓█▓▒░         ░▒▓█▓▒░  ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░        
+░▒▓█▓▒░      ░▒▓█▓▒░      ░▒▓█▓▒░         ░▒▓█▓▒░  ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░        
+░▒▓█▓▒░      ░▒▓█▓▒░      ░▒▓█▓▒░         ░▒▓█▓▒░  ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░        
+░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░      ░▒▓█▓▒░         ░▒▓█▓▒░  ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░        
+ ░▒▓██████▓▒░░▒▓████████▓▒░▒▓█▓▒░         ░▒▓█▓▒░   ░▒▓██████▓▒░ ░▒▓██████▓▒░░▒▓████████▓▒░ 
+                                                                                                                                  
+                                               
 """
+>>>>>>> 23ff0354da3f35011c9778c776ec83072a40b9bc
 def show_menu():
-    purple(name)
-    success("    Created by @hakim @salma @caleb")
-    info("""
-    N.B. '<>' is used to represent the input space for your target file path when combining with
-    the given command(s)    
-    """)
-    print('''      
-    ---------------------------------AVAILABLE COMMANDS--------------------------------------------------
+    cprint("\n=====================================", "cyan")
+    cprint("           OH-MY-CLI — Commands      ", "cyan")
+    cprint("=====================================\n", "cyan")
 
-    peek <target file>                                  -      Preview the first n lines of a file
-    find_x_in <target word> in <target file>                 -      Find files matching a pattern
-    swap <target file 1> with <target file 2>           -      Swap contents of two files
-    fmeta <target file>                                 -      Show metadata for a file
-    jump <target folder>                                -      Change working directory    
-    getwd <target folder>                               -      Show current working directory
-    pdelete -f <target file>                            -      Permanently delete file
-    pdelete -d <target folder>                          -      Permanently delete folder 
-    cfile <filename>                                    -      Create a new empty file   
-    cfolder <folder name>                               -      Create a new folder
-    search_f <filename>                                 -      find file in the current directory
-    search_ex <extension eg .txt>                        -      search for files with a certain extension
-    search_w <search word>                              -      search files for a certain keyword
-    exit                                                -      Quit the CLI tool
-''')
+    cprint("Available Commands:\n", "yellow")
+
+    table = [
+        ("peek <file>",              "Preview the first n lines of a file"),
+        ("find_x_in <pattern>",      "Find files matching a pattern"),
+        ("swap <f1> <f2>",           "Swap contents of two files"),
+        ("fmeta <file>",             "Show metadata for a file"),
+        ("jump <path>",              "Change working directory"),
+        ("gwd",                      "Show current working directory"),
+        ("pdelete -f/-d <target>",   "Permanently delete file or folder"),
+        ("create_folder <name>",     "Create a new folder"),
+        ("create_file <name>",       "Create a new empty file"),
+        ("username <name>",          "Change Username"),
+        ("exit",                     "Quit the CLI tool")
+    ]
+
+    # Render the table rows
+    for cmd, desc in table:
+        cprint(f"  {cmd:<25} - {desc}", "white")
+
     print()
