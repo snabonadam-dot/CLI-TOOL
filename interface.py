@@ -1,48 +1,48 @@
 
 from colorama import Fore, Style, init
 
+# initialize colorama
 init(autoreset=True)
 
 # Color constants
 COLORS = {
     "red": Fore.RED,
     "green": Fore.GREEN,
-    "yellow": Fore.YELLOW,
     "blue": Fore.BLUE,
+    "yellow": Fore.YELLOW,
     "cyan": Fore.CYAN,
     "magenta": Fore.MAGENTA,
     "white": Fore.WHITE,
     "reset": Style.RESET_ALL
 }
 
-def cprint(text, color="white"):
-    """Custom print function with color."""
-    clr = COLORS.get(color.lower(), COLORS["white"])
-    print(f"{clr}{text}{COLORS['reset']}")
+# custom print with color parameter
+def cprint(text, color):
+    text_color = COLORS.get(color.lower())
+    print(f"{text_color}{text}")
 
-def title(text):
-    cprint("\n" + "=" * len(text), "cyan")
-    cprint(text, "cyan")
-    cprint("=" * len(text) + "\n", "cyan")
-
+# for information
 def info(text):
     cprint(text, "blue")
 
+# for success messages
 def success(text):
     cprint(text, "green")
 
+# for error messages
 def error(text):
     cprint(text, "red")
 
 
 name = """
- _____  _     _____   _____ _____  _____ _     
-/  __ \| |   |_   _| |_   _|  _  ||  _  | |    
-| /  \/| |     | |     | | | | | || | | | |    
-| |    | |     | |     | | | | | || | | | |    
-| \__/\| |_____| |_    | | \ \_/ /\ \_/ / |____
- \____/\_____/\___/    \_/  \___/  \___/\_____/
-                                               
+ ░▒▓██████▓▒░░▒▓█▓▒░      ░▒▓█▓▒░      ░▒▓████████▓▒░▒▓██████▓▒░ ░▒▓██████▓▒░░▒▓█▓▒░        
+░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░      ░▒▓█▓▒░         ░▒▓█▓▒░  ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░        
+░▒▓█▓▒░      ░▒▓█▓▒░      ░▒▓█▓▒░         ░▒▓█▓▒░  ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░        
+░▒▓█▓▒░      ░▒▓█▓▒░      ░▒▓█▓▒░         ░▒▓█▓▒░  ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░        
+░▒▓█▓▒░      ░▒▓█▓▒░      ░▒▓█▓▒░         ░▒▓█▓▒░  ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░        
+░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░      ░▒▓█▓▒░         ░▒▓█▓▒░  ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░        
+ ░▒▓██████▓▒░░▒▓████████▓▒░▒▓█▓▒░         ░▒▓█▓▒░   ░▒▓██████▓▒░ ░▒▓██████▓▒░░▒▓████████▓▒░ 
+                                                                                                                                  
                                                
 """
 def show_menu():

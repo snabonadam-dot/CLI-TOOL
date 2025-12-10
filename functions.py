@@ -1,15 +1,12 @@
 import os
 import time
-from interface import success,error,title,info
+from interface import success,error,info
 
 
 # Helper Functions
-
 # this helps us check if the file exists beforehand
 def file_exists(path):
     return os.path.isfile(path)
-
-
 
 # this helps us check if the folder exists beforehand
 def folder_exists(path):
@@ -83,6 +80,7 @@ def peek(params):
             lines = f.readlines()
             for line in lines[:number_of_lines]:
                 print(line, end="")
+                success()
     else:
         error("This file does not exist!")
 
