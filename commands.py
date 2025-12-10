@@ -7,14 +7,13 @@ commands = {
     "swap": swap_contents,
     "fmeta": fmeta,
     "jump": jump,
-    "gwd": gwd,
+    "getwd": gwd,
     "pdelete": pdelete,
-    "create_folder":create_folder,
-    "create_file": create_file,
-    "username": change_username,
+    "cfolder":create_folder,
+    "cfile": create_file,
     "search_f": search_filename,
-    "search_x": search_extension,
-    "search_c": search_content,
+    "search_ex": search_extension,
+    "search_w": search_content,
 }
 
 def execute_func(user_input):

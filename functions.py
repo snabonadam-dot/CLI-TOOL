@@ -1,5 +1,4 @@
 import os
-import time
 from interface import success,error,info
 
 
@@ -26,21 +25,6 @@ def read_files_into_str(filename):
         contents = f.read()
     return contents
 
-# personalization of username in cli tool
-def get_username():
-    with open("user.txt","r",encoding="utf-8") as f:
-        username = f.readline()
-        return username
-
-# change username in cli
-def change_username(params):
-    if len(params) < 1:
-        info("Usage: username <username>")
-        return
-    username = params[0]
-    with open("user.txt","w",encoding="utf-8") as f:
-        f.write(username)
-        success("username changed, exit and restart application")
 
 # a simple helper to confirm actions
 def action_prompt():
@@ -66,14 +50,14 @@ def delete_folder_recursive(folder):
 
 # Command functions for cli tool
 
-
-## pour eek function, allows you to look at the first n lines in a file, prints the first n lines in the console
+## peek function, allows you to look at the first n lines in a file, prints the first n lines in the console
 def peek(params):
     if len(params) < 2:
         info("Usage: peek <filename> <number_of_lines>")
         return
     filename = params[0]
     number_of_lines = int(params[1])
+
     # first check if the file exists using our custom util function
     if file_exists(filename):
         with open(filename, "r",encoding="utf-8") as f:
@@ -136,9 +120,6 @@ def fmeta(params):
         stats = os.stat(filename)
         success("File:", filename)
         success("Size:", stats.st_size, "bytes")
-        success("Created:", time.ctime(stats.st_ctime))
-        success("Modified:", time.ctime(stats.st_mtime))
-        success("Accessed:", time.ctime(stats.st_atime))
         success("Extension:", os.path.splitext(filename)[1])
         success("Absolute Path:", os.path.abspath(filename))
     else:
