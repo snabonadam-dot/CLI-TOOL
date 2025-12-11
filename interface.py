@@ -68,7 +68,7 @@ def show_menu():
     pdelete -d <target folder>                          -      Permanently delete folder 
     cfile <filename>                                    -      Create a new empty file   
     cfolder <folder name>                               -      Create a new folder
-    search_f <filename>                                 -      find file in the current directory
+    search_f <filename.ext>                                 -      find file in the current directory
     search_ex <extension eg .txt>                        -      search for files with a certain extension
     search_w <search word>                              -      search files for a certain keyword
     exit                                                -      Quit the CLI tool
