@@ -9,7 +9,6 @@ COLORS = {
     "red": Fore.RED,
     "green": Fore.GREEN,
     "blue": Fore.BLUE,
-    "yellow": Fore.YELLOW,
     "cyan": Fore.CYAN,
     "magenta": Fore.MAGENTA,
     "white": Fore.WHITE,
@@ -59,7 +58,7 @@ def show_menu():
     ---------------------------------AVAILABLE COMMANDS--------------------------------------------------
 
     peek <target file>                                  -      Preview the first n lines of a file
-    find_x_in <target word> in <target file>                 -      Find files matching a pattern
+    find_x_in  <target file> <target word>              -      Find files matching a pattern
     swap <target file 1> with <target file 2>           -      Swap contents of two files
     fmeta <target file>                                 -      Show metadata for a file
     jump <target folder>                                -      Change working directory    
